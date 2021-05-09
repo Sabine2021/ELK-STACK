@@ -5,7 +5,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network Diagram](Diagrams/network_diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Beats file may be used to install only certain pieces of it, such as Filebeat.
 
 -filebeat-configuration.yml 
 -filebeat-playbook.yml
@@ -57,15 +57,20 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | 52.170.45.247        |
-| Jump Box | No                  | 10.0.0.4             |
-| DVWA 1   | No                  | 10.0.0.5             |
-| DVWA 2   | No                  | 10.0.0.6             |
-| DVWA 3   | No                  | 10.0.0.7             |
+| Jump Box | No                  | 10.0.0.4-251         |
+| DVWA 1   | No                  | 10.0.0.5-250         |
+| DVWA 2   | No                  | 10.0.0.6-249         |
+| DVWA 3   | No                  | 10.0.0.7-248         |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- Ansible is an open source tool.
+- Simple to set up and use. No special coding necessary.
+- Allows model of highly complex workflows.
+- Flexiable; allows customization based on needs.
+- Agentless; does not need any software, management system or firewall ports.
+- Efficient; doe snot utilize alot of resources.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
