@@ -35,7 +35,7 @@ The configuration details of each machine may be found below.
 | Name     | Function | IP Address  | Operating System |
 |----------|----------|-------------|------------------|
 | Jump Box | Gateway  |52.170.45.247| Linux            |
-                      | 10.0.0.4    | Linux            |
+| Jump Box | Gateway  | 10.0.0.4    | Linux            |
 | DVWA 1   |Webserver | 10.0.0.5    | Linux            |
 | DVWA 2   |Webserver | 10.0.0.6    | Linux            |
 | DVWA 3   |Webserver | 10.0.0.7    | Linux            |
@@ -55,9 +55,9 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 10.0.0.4             |
+| DVWA 1   | NO                  |                      |
+| DVWA 2   | NO                  |                      |
 
 ### Elk Configuration
 
