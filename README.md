@@ -7,7 +7,8 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible file may be used to install only certain pieces of it, such as Filebeat.
 
-  -filebeat-configuration.yml and -filebeat-playbook.yml
+-filebeat-configuration.yml
+-filebeat-playbook.yml
 
 This document contains the following details:
 - Description of the Topologu
@@ -55,9 +56,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.4             |
-| DVWA 1   | NO                  |                      |
-| DVWA 2   | NO                  |                      |
+| Jump Box | Yes                 | 52.170.45.247        |
+| Jump Box | No                  | 10.0.0.4             |
+| DVWA 1   | No                  | 10.0.0.5             |
+| DVWA 2   | No                  | 10.0.0.6             |
+| DVWA 3   | No                  | 10.0.0.7             |
 
 ### Elk Configuration
 
