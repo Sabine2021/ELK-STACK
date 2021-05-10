@@ -73,27 +73,33 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - Efficient; doe snot utilize alot of resources.
 
 The "install-elk" playbook implements the following tasks:
-- Set the "vm.max_map_count" to "262144".
-   This configures the "ELK" VM (the machine being configured) to use more memory. The ELK container will not run without this setting.
-   You will want to use Ansible's "sysctl" module and configure it so that this setting is automatically run if your VM has been restarted.
+- Install the following "apt" packages:
+  -"docker.io": The Docker engine, used for running containers.
+  -"python3-pip": Package used to install Python software.
 
-- Installs the following "apt" packages:
-  "docker.io": The Docker engine, used for running containers.
-  "python3-pip": Package used to install Python software.
-
-- Installs the following "pip" packages:
+- Install the following Docker module "pip" package:
   docker: Python client for Docker. Required by Ansbile to control the state of Docker containers.
-
-- Downloads the Docker container called "sebp/elk:761". "sebp" is the organization that made the container. "elk" is the container and "761" is the version.
+  
+  - Set the "vm.max_map_count" to "262144".
+   -This configures the "ELK" VM (the machine being configured) to use more memory virtual memory. 
+   -The ELK container will not run without this setting.
+   
+  - Use Ansible's "sysctl" module and configure it so that this setting is automatically run if your VM has been restarted.
+  
+  - Download the docker container module called "sebp/elk:761". 
+    -"sebp" is the organization that made the container. 
+    -"elk" is the container.
+    -"761" is the version.
 
 - Configures the container to start with the following port mappings:
-   5601:5601
-   9200:9200
-   5044:5044
+   -5601:5601
+   -9200:9200
+   -5044:5044
 
-- Starts the container.
+- Start the container.
 
-- Enables the "docker" service on boot, so that if you restart your "ELK" VM, the docker service start up automatically.
+- Use systemd module 
+  -Enables the "docker" service on boot, so that if you restart your "ELK" VM, the docker service start up automatically.
 
 ![install-elk.yml](Images/install-elk.yml1.PNG)
 ![install-elk.yml](Images/install-elk.yml2.PNG)
