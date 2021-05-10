@@ -132,7 +132,8 @@ SSH into the control node and follow the steps below:
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. You should see this webpage:
+- Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. 
+- You should see this webpage:
 ![Kibana Homepage](Images/Kibana.jpg)
 
 
