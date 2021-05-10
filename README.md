@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Beats file may be used to install only certain pieces of it, such as Filebeat.
  
-![filebeat-playbook](Ansible/filebeat-playbook.PNG)
+![filebeat-playbook](Images/filebeat-playbook.PNG)
 
 This document contains the following details:
 - Description of the Topologu
@@ -95,8 +95,8 @@ The "install-elk" playbook implements the following tasks:
 
 - Enables the "docker" service on boot, so that if you restart your "ELK" VM, the docker service start up automatically.
 
-![install-elk.yml](Ansible/install-elk.yml1.PNG)
-![install-elk.yml](Ansible/install-elk.yml2.PNG)
+![install-elk.yml](Images/install-elk.yml1.PNG)
+![install-elk.yml](Images/install-elk.yml2.PNG)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
