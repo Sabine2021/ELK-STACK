@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Beats file may be used to install only certain pieces of it, such as Filebeat.
  
-![filebeat-playbook](Ansible/filebeat-playbook.yml)
+![filebeat-playbook](Images/filebeat-playbook.PNG)
 
 This document contains the following details:
 - Description of the Topologu
@@ -73,40 +73,50 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - Efficient; doe snot utilize alot of resources.
 
 The "install-elk" playbook implements the following tasks:
+- Install the following "apt" packages:
+  - "docker.io": The Docker engine, used for running containers.
+  - "python3-pip": Package used to install Python software.
+
+- Install the following Docker module "pip" package:
+  - "docker": Python client for docker. Required by Ansbile to control the state of Docker containers.
+  
 - Set the "vm.max_map_count" to "262144".
-   This configures the "ELK" VM (the machine being configured) to use more memory. The ELK container will not run without this setting.
-   You will want to use Ansible's "sysctl" module and configure it so that this setting is automatically run if your VM has been restarted.
-
-- Installs the following "apt" packages:
-  "docker.io": The Docker engine, used for running containers.
-  "python3-pip": Package used to install Python software.
-
-- Installs the following "pip" packages:
-  docker: Python client for Docker. Required by Ansbile to control the state of Docker containers.
-
-- Downloads the Docker container called "sebp/elk:761". "sebp" is the organization that made the container. "elk" is the container and "761" is the version.
+  - This configures the "ELK" VM (the machine being configured) to use more memory virtual memory. 
+  - The ELK container will not run without this setting.
+   
+- Use Ansible's "sysctl" module and configure it so that this setting is automatically run if your VM has been restarted.
+  
+- Download the docker container module called "sebp/elk:761". 
+  - "sebp" is the organization that made the container. 
+  - "elk" is the container.
+  - "761" is the version.
 
 - Configures the container to start with the following port mappings:
-   5601:5601
-   9200:9200
-   5044:5044
+  - 5601:5601
+  - 9200:9200
+  - 5044:5044
 
-- Starts the container.
+- Start the container.
 
-- Enables the "docker" service on boot, so that if you restart your "ELK" VM, the docker service start up automatically.
+- Use systemd module 
+  - Enables the "docker" service on boot, so that if you restart your "ELK" VM, the docker service start up automatically.
 
-![install-elk.yml](Ansible/install-elk.yml) 
+![install-elk.yml](Images/install-elk.yml1.PNG)
+![install-elk.yml](Images/install-elk.yml2.PNG)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![docker ps output](Images/jbp_docker_ps.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5
+- 10.0.0.6
+- 10.0.0.7
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
@@ -122,6 +132,8 @@ SSH into the control node and follow the steps below:
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. You should see this webpage:
+![Kibana Homepage](Images/Kibana.jpg)
+
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
