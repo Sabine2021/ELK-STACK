@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Beats file may be used to install only certain pieces of it, such as Filebeat.
  
-[filebeat-playbook](Ansible/filebeat-playbook.yml)
+![filebeat-playbook](Ansible/filebeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -56,10 +56,11 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | 52.170.45.247        |
-| Jump Box | No                  | 10.0.0.4-251         |
-| DVWA 1   | No                  | 10.0.0.5-250         |
-| DVWA 2   | No                  | 10.0.0.6-249         |
-| DVWA 3   | No                  | 10.0.0.7-248         |
+| Jump Box | No                  | 10.0.0.4             |
+| DVWA 1   | No                  | 10.0.0.5             |
+| DVWA 2   | No                  | 10.0.0.6             |
+| DVWA 3   | No                  | 10.0.0.7             |
+| ELK      | No                  | 10.2.0.0             |
 
 ### Elk Configuration
 
@@ -71,10 +72,30 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - Agentless; does not need any software, management system or firewall ports.
 - Efficient; doe snot utilize alot of resources.
 
-The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+The "install-elk" playbook implements the following tasks:
+- Set the "vm.max_map_count" to "262144".
+   This configures the "ELK" VM (the machine being configured) to use more memory. The ELK container will not run without this setting.
+   You will want to use Ansible's "sysctl" module and configure it so that this setting is automatically run if your VM has been restarted.
+
+- Installs the following "apt" packages:
+  "docker.io": The Docker engine, used for running containers.
+  "python3-pip": Package used to install Python software.
+
+- Installs the following "pip" packages:
+  docker: Python client for Docker. Required by Ansbile to control the state of Docker containers.
+
+- Downloads the Docker container called "sebp/elk:761". "sebp" is the organization that made the container. "elk" is the container and "761" is the version.
+
+- Configures the container to start with the following port mappings:
+   5601:5601
+   9200:9200
+   5044:5044
+
+- Starts the container.
+
+- Enables the "docker" service on boot, so that if you restart your "ELK" VM, the docker service start up automatically.
+
+![install-elk.yml](Ansible/install-elk.yml) 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
