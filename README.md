@@ -74,15 +74,15 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The "install-elk" playbook implements the following tasks:
 - Install the following "apt" packages:
-  -"docker.io": The Docker engine, used for running containers.
-  -"python3-pip": Package used to install Python software.
+  --"docker.io": The Docker engine, used for running containers.
+  --"python3-pip": Package used to install Python software.
 
 - Install the following Docker module "pip" package:
-  docker: Python client for Docker. Required by Ansbile to control the state of Docker containers.
+  -docker: Python client for Docker. Required by Ansbile to control the state of Docker containers.
   
 - Set the "vm.max_map_count" to "262144".
-  -This configures the "ELK" VM (the machine being configured) to use more memory virtual memory. 
-  -The ELK container will not run without this setting.
+  --This configures the "ELK" VM (the machine being configured) to use more memory virtual memory. 
+  --The ELK container will not run without this setting.
    
 - Use Ansible's "sysctl" module and configure it so that this setting is automatically run if your VM has been restarted.
   
