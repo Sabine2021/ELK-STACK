@@ -78,7 +78,7 @@ The "install-elk" playbook implements the following tasks:
   - "python3-pip": Package used to install Python software.
 
 - Install the following Docker module "pip" package:
-  - docker: Python client for Docker. Required by Ansbile to control the state of Docker containers.
+  - "docker": Python client for docker. Required by Ansbile to control the state of Docker containers.
   
 - Set the "vm.max_map_count" to "262144".
   - This configures the "ELK" VM (the machine being configured) to use more memory virtual memory. 
@@ -133,7 +133,6 @@ _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. You should see this webpage:
-![Kibana Homepage](Images/'Kibana Homepage.png')
 ![Kibana Homepage](Images/Kibana.jpg)
 
 
