@@ -132,16 +132,16 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook files to the Ansible container.
-- Update the configuration file to include the ELK server IP address.
-- Run the playbook, and navigate to each webserver to check that the installation worked as expected.
+- Update the hosts file to include the ELK server IP address.
+- Run the playbook, and navigate to each webserver internal ip address to check that the installation worked as expected.
 
 - Ansible reads YAML code. The YAML code is written in to a file for Ansible to read. The YAML file extension is ".yml". A YAML file is denoted with three hyphens on the first line of the file. Ansible documentation calls these files "playbooks" because they are used to run a set of "plays" or "actions" on a server.
 
 - Copy the playbooks to the /etc/ansible/files directory. 
 - Next, you must create a hosts file to specify which webservers to run each playbook on. Specify each machine by ip address. 
-- Run the command "ansible-playbook" and specify which "yml." installation you want installed on which specific server.
+- Run the command "ansible-playbook" and specify which "yml." playbook installation you want installed on which specific server.
 - After all configurations are complete:
-  - Run curl http://[ELK internal ip address]:5601. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
+  - Run "curl http://[ELK internal ip address]:5601". This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
 - Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. 
 - You should see this webpage:
 ![Kibana Homepage](Images/Kibana.jpg)
