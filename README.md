@@ -140,7 +140,8 @@ SSH into the control node and follow the steps below:
 - Copy the playbooks to the /etc/ansible/files directory. 
 - Next, you must create a hosts file to specify which webservers to run each playbook on. Specify each machine by ip address. 
 - Run the command "ansible-playbook" and specify which "yml." installation you want installed on which specific server.
-- After all configurations are complete, run curl http://[ELK internal ip address]:5601. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
+- After all configurations are complete:
+  - Run curl http://[ELK internal ip address]:5601. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
 - Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. 
 - You should see this webpage:
 ![Kibana Homepage](Images/Kibana.jpg)
