@@ -136,6 +136,7 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to each webserver internal ip address to check that the installation worked as expected.
 
 - Ansible reads YAML code. The YAML code is written in to a file for Ansible to read. (Note: examples of YAML code can be  The YAML file extension is ".yml". A YAML file is denoted with three hyphens on the first line of the file. Ansible documentation calls these files "playbooks" because they are used to run a set of "plays" or "actions" on a server.
+
 ![filebeat-playbook](Images/filebeat-playbook.PNG)
 
 - Copy the playbooks to the /etc/ansible/roles directory. 
