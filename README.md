@@ -5,10 +5,10 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network Diagram](Diagrams/network_diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Beats file may be used to install only certain pieces of it, such as Filebeat.
- 
-![filebeat-playbook](Images/filebeat-playbook.PNG)
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, selected portions of the Beats file may be used to install only certain pieces of it, such as Filebeat.
 
+![filebeat-playbook](Images/filebeat-playbook.PNG)
+ 
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
@@ -135,7 +135,8 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include the ELK server IP address.
 - Run the playbook, and navigate to each webserver internal ip address to check that the installation worked as expected.
 
-- Ansible reads YAML code. The YAML code is written in to a file for Ansible to read. The YAML file extension is ".yml". A YAML file is denoted with three hyphens on the first line of the file. Ansible documentation calls these files "playbooks" because they are used to run a set of "plays" or "actions" on a server.
+- Ansible reads YAML code. The YAML code is written in to a file for Ansible to read. (Note: examples of YAML code can be  The YAML file extension is ".yml". A YAML file is denoted with three hyphens on the first line of the file. Ansible documentation calls these files "playbooks" because they are used to run a set of "plays" or "actions" on a server.
+- ![filebeat-playbook](Images/filebeat-playbook.PNG)
 
 - Copy the playbooks to the /etc/ansible/roles directory. 
 - Next, you must create a hosts file to specify which webservers to run each playbook on. Specify each machine by ip address. 
