@@ -137,7 +137,7 @@ SSH into the control node and follow the steps below:
 
 - Ansible reads YAML code. The YAML code is written in to a file for Ansible to read. The YAML file extension is ".yml". A YAML file is denoted with three hyphens on the first line of the file. Ansible documentation calls these files "playbooks" because they are used to run a set of "plays" or "actions" on a server.
 
-- Copy the playbooks to the /etc/ansible/files directory. 
+- Copy the playbooks to the /etc/ansible/ directory. 
 - Next, you must create a hosts file to specify which webservers to run each playbook on. Specify each machine by ip address. 
 - Run the command "ansible-playbook" and specify which "yml." playbook installation you want installed on which specific server.
 - After all configurations are complete:
