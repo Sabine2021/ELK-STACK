@@ -131,16 +131,18 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the Filebeat configuration file to the Ansible container.
+- Copy the playbook files to the Ansible container.
 - Update the configuration file to include the ELK server IP address.
-- Run the playbook, and navigate to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected
+- Run the playbook, and navigate to each webserver to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- Ansible reads YAML code. The YAML code is written in to a file for Ansible to read. The YAML file extension is ".yml". A YAML file is denoted with three hyphens on the first line of the file. Ansible documentation calls these files "playbooks" because they are used to run a set of "plays" or "actions" on a server.
+
+- Copy the playbooks to the /etc/ansible/files directory. 
+- Next, you must create a hosts file to specify which webservers to run each playbook on. Specify each machine by ip address. 
+- Run the command "ansible-playbook" and specify which "yml." installation you want installed on which specific server.
+- After all configurations are complete, run curl http://10.0.0.8:5601. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
 - Verify that you can access your server by navigating to http://[use the public IP address of your new VM]:5601/app/kibana. 
 - You should see this webpage:
 ![Kibana Homepage](Images/Kibana.jpg)
 
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
