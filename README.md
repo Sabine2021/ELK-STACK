@@ -46,10 +46,10 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the "Jump Box Provisioner" machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
--From 107.201.134.111 to 52.170.45.247
+- From 107.201.134.111 to 52.170.45.247
 
 Machines within the network can only be accessed by "ssh" Jump Box Provisioner internal IP address 10.0.0.4
--Access in to the ELK server can only be accessed by Jump Box Provisioner internal IP address 10.0.0.4
+- Access in to the ELK server can only be accessed by Jump Box Provisioner internal IP address 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
